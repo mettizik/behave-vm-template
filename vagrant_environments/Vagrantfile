@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: "echo Vagrant init"
+
+  config.vm.define "ubuntu32" do |ubuntu32|
+    ubuntu32.vm.box = "ubuntu/trusty32"
+  end
+
+  config.vm.define "ubuntu64" do |ubuntu64|
+    ubuntu64.vm.box = "ubuntu/trusty64"
+  end
+
+  config.vm.define "centos32" do |centos32|
+    centos32.vm.box = "bento/centos-6.7-i386"
+  end
+
+  config.vm.define "centos64" do |centos64|
+    centos64.vm.box = "centos/7"
+  end
+end
